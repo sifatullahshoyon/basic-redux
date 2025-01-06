@@ -1,6 +1,8 @@
 import { decrement, increment } from "./redux/features/counter/counterSlice";
 import { RootState } from "./redux/store";
 import { useAppDispatch, useAppSelector } from "./redux/hook";
+import Navbar from "./components/layout/Navbar";
+import { Outlet } from "react-router-dom";
 
 function App() {
   // const dispatch = useDispatch();
@@ -20,13 +22,15 @@ function App() {
   };
   return (
     <>
-      <h1>Counter With Redux</h1>
-      <div>
-        <button onClick={() => handleIncrement(1)}>Increment</button>
-        <button onClick={() => handleIncrement(5)}>Increment by 5</button>
-        <button>{count}</button>
-        <button onClick={handleDecrement}>Decrement</button>
-      </div>
+      {/* <h1>Counter With Redux</h1>
+      <div className="flex gap-5">
+        <Button onClick={() => handleIncrement(1)}>Increment</Button>
+        <Button onClick={() => handleIncrement(5)}>Increment by 5</Button>
+        <Button>{count}</Button>
+        <Button onClick={handleDecrement}>Decrement</Button>
+      </div> */}
+      <Navbar />
+      <Outlet />
     </>
   );
 }
